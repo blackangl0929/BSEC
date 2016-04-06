@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+    Index
+    {{ super() }}
+{% endblock %}
+{% block page_context %}
+    <div class="container theme-showcase" role="main">
+      <div class="jumbotron">
+        <h1>Base Security</h1>
+          <h1>Author by {% if name  %}{{ name }}{% else %}Nsfocus{% endif %}</h1>
+          {% if not known %}
+            <p> Please to meet you</p>
+            {% else  %}
+            <p>Happy to see you again</p>
+          {% endif %}
+        <p>NSFOCUS helps secure the world’s largest banks, telecommunications companies,
+            mobile operators, social media companies, service providers, gaming, and content provider companies.</p>
+      </div>
+{{ wtf.quick_form(form) }}
+{% endblock %}
